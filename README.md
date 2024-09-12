@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pagen AI Landing Page Template
 
-## Getting Started
+This is a landing page template created by [Pagen AI](https://pagen.so). It is built with Next.js and Shadcn UI.
 
-First, run the development server:
+![preview](./templates/shadcn/assets/imgs/preview.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Local Development
+
+1. Clone the repository
+
+```shell
+git clone https://github.com/all-in-aigc/pagen-ai-landing-page-template landing-page
+
+cd landing-page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Preview the landing page
 
-## Learn More
+```shell
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. View the landing page at
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
 
-## Deploy on Vercel
+You can customize the landing page content by editing the `data/demo.ts` file.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can customize the landing page style by editing the `templates/shadcn/` folder.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can create a new page with a new `page.tsx` in the `app` folder:
+
+```ts
+import Landing from "@/templates/shadcn/pages/landing";
+import { page } from "@/data/demo";
+
+export default async function () {
+  return <Landing page={page} />;
+}
+```
+
+## Create Template
+
+You can create a new template by creating a new folder in the `templates` folder.
+
+organize the template files with the following format:
+
+```
+new-template
+├── assets
+│   ├── css
+│   │   └── style.css
+│   └── imgs
+│       └── logo.png
+├── components
+│   ├── cta
+│   │   └── index.tsx
+│   ├── faq
+│   │   └── index.tsx
+│   ├── feature
+│   │   └── index.tsx
+│   ├── footer
+│   │   └── index.tsx
+│   ├── header
+│   │   └── index.tsx
+│   ├── hero
+│   │   └── index.tsx
+│   ├── pricing
+│   │   └── index.tsx
+│   ├── section
+│   │   └── index.tsx
+│   ├── testimonial
+│   │   └── index.tsx
+│   └── usercase
+│       └── index.tsx
+└── pages
+    └── landing.tsx
+```
+
+follow this image 👇 to organize the content parts in `pages/landing.tsx`
+
+![Landing Page](./public/imgs/landing.png)
+
+## Submit Template
+
+After you created your template, you can submit it to Pagen Templates Center with an issue:
+
+[https://github.com/all-in-aigc/pagen-ai-landing-page-template/issues](https://github.com/all-in-aigc/pagen-ai-landing-page-template/issues)
+
+## Credits To
+
+- [Pagen AI](https://pagen.so)
+- [Next.js](https://nextjs.org)
+- [Shadcn UI](https://ui.shadcn.com)
+
+if you use this Landing Page Template, please give a credit to [Pagen AI](https://pagen.so)
+
+> Create landing page in seconds, try it out 👉 [Pagen AI Landing Page Generator](https://pagen.so/landing-page-generator)
